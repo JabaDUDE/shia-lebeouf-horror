@@ -34,6 +34,15 @@ def choices(choices):
     for num, option in choices.items():
         print("{} : {}".format(num, option))
 
+# function to print out bad options, hopefully allows reusability and fix bug on 135
+def choice_made(choice, options):
+    if choice in options.items():
+        print_items = options[choice]
+        for num, item in print_items:
+            print("{}".format(item))
+            if num == len(print_items):
+                exit()
+
 
 clear()
 answer = input(f'Ready you ready to try and survive the mighty {killer.name}?! (y/n) ')
@@ -124,13 +133,14 @@ answer_two = None
 while answer_two not in choice_two.keys():
     answer_two = input("What do you do?: ")
 
-# What happens if user inputs 'n' before the count reaches 3? TODO: fix bug where if user hits 'n' and then answers question about what choice they want to try next, it doesn't display anything.
+
 if answer_two == 'd':
     ans = 'y'
     while ans == 'y' and count < 3:
         clear()
         ans = input("It doesn't work. Do you want to try again? (y/n): ")
         count += 1
+# What happens if user inputs 'n' before the count reaches 3? TODO: fix bug where if user hits 'n' and then answers question about what choice they want to try next, it doesn't display anything.
         if ans == 'n':
             choices(choice_two)
             answer_two = None
@@ -146,7 +156,50 @@ elif answer_two == 'b':
     print("Game over!")
     exit()
 elif answer_two == 'a':
-    print("As you curse every God you can think of and the person that planted this trap, you fail to notice {} come running out of the cottage. You may be dead but screaming was actually kind of a nice stress reliever.".format(killer.name))
+    print(f"As you curse every God you can think of and the person that planted this trap, you fail to notice {killer.name} come running out of the cottage. You may be dead but screaming was actually kind of a nice stress reliever.")
     print("Game over!")
     exit()
 
+clear()
+
+print("You spend the next hour gnawing off your leg as quietly as possible. Eventually it comes off and you grab a nearby stick to use as a crutch.")
+print("You limp towards the cottage, being careful to not make more noise.")
+print("As you approach the doorstep, you peer into the window. Your eyes go wide. It's him. It's {}".format(killer.name))
+print("He's sitting on a chair, sharpening an axe. He doesn't seem to have noticed you yet.")
+
+sleep(15)
+clear()
+
+
+choice_three = {
+    'a' : 'bust down the door and charge in screaming',
+    'b' : 'sneak inside and attemp to strangle him',
+    'c' : 'try to sneak away'
+}
+
+choices(choice_three)
+
+print('----------------------------------------------------------------')
+
+answer_three = None
+
+while answer_three not in choice_three.keys():
+    answer_three = input("What do you do?: ")
+
+options_three = {
+    'a': ["You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.","Especially the part where the as the door opens, you stumble forward and end up on the ground.",f"Needless to say {killer.name} was happy to have his prey come to him.","You died. Game over!"],
+    'c': ["In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.","You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.","You died. Game over!"]
+}
+
+choice_made(answer_three, options_three)
+# if answer_three == 'a':
+#     print("You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.")
+#     print("Especially the part where the as the door opens, you stumble forward and end up on the ground.")
+#     print("Needless to say {} was happy to have his prey come to him.".format(killer.name))
+#     print("You died. Game over!")
+#     exit()
+# elif answer_three == 'c':
+#     print("In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.")
+#     print("You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.")
+#     print("You died. Game over!")
+#     exit()
