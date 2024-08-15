@@ -34,14 +34,15 @@ def choices(choices):
     for num, option in choices.items():
         print("{} : {}".format(num, option))
 
+# TODO: does not properly display text
 # function to print out bad options, hopefully allows reusability and fix bug on 135
-def choice_made(choice, options):
-    if choice in options.items():
-        print_items = options[choice]
-        for num, item in print_items:
-            print("{}".format(item))
-            if num == len(print_items):
-                exit()
+# def choice_made(choice, options):
+#     if choice in options.items():
+#         print_items = options[choice]
+#         for num, item in print_items:
+#             print("{}".format(item))
+#             if num == len(print_items):
+#                 exit()
 
 
 clear()
@@ -186,20 +187,25 @@ answer_three = None
 while answer_three not in choice_three.keys():
     answer_three = input("What do you do?: ")
 
-options_three = {
-    'a': ["You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.","Especially the part where the as the door opens, you stumble forward and end up on the ground.",f"Needless to say {killer.name} was happy to have his prey come to him.","You died. Game over!"],
-    'c': ["In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.","You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.","You died. Game over!"]
-}
 
-choice_made(answer_three, options_three)
-# if answer_three == 'a':
-#     print("You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.")
-#     print("Especially the part where the as the door opens, you stumble forward and end up on the ground.")
-#     print("Needless to say {} was happy to have his prey come to him.".format(killer.name))
-#     print("You died. Game over!")
-#     exit()
-# elif answer_three == 'c':
-#     print("In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.")
-#     print("You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.")
-#     print("You died. Game over!")
-#     exit()
+# TODO: fix function so it displays text
+# options_three = {
+#     'a': ["You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.","Especially the part where the as the door opens, you stumble forward and end up on the ground.",f"Needless to say {killer.name} was happy to have his prey come to him.","You died. Game over!"],
+#     'c': ["In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.","You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.","You died. Game over!"]
+# }
+
+
+# choice_made(answer_three, options_three)
+
+
+if answer_three == 'a':
+    print("You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.")
+    print("Especially the part where the as the door opens, you stumble forward and end up on the ground.")
+    print("Needless to say {} was happy to have his prey come to him.".format(killer.name))
+    print("You died. Game over!")
+    exit()
+elif answer_three == 'c':
+    print("In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.")
+    print("You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.")
+    print("You died. Game over!")
+    exit()
