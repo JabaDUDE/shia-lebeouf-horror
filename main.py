@@ -174,7 +174,7 @@ clear()
 
 choice_three = {
     'a' : 'bust down the door and charge in screaming',
-    'b' : 'sneak inside and attemp to strangle him',
+    'b' : 'sneak inside and get behind him',
     'c' : 'try to sneak away'
 }
 
@@ -328,5 +328,5 @@ print("You're finally safe from {}".format(killer.name))
 sleep(10)
 clear()
 
-print(f"YOU HAVE BEATEN {killer.name.capitalize()}. YOU WIN!")
+print("YOU HAVE BEATEN {}! YOU WIN!".format(killer.name.upper()))
 exit()
