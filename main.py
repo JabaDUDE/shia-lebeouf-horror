@@ -18,12 +18,12 @@ def clear():
 class Killer:
     def __init__(self):
         self.name = 'Shia LeBeouf'
-        self.health = 100
+    #     self.health = 100
 
-    def damage(self, name, dmg):
-        attribute = getattr(self, name)
-        attribute -= dmg
-        setattr(self, name, attribute)
+    # def damage(self, name, dmg):
+    #     attribute = getattr(self, name)
+    #     attribute -= dmg
+    #     setattr(self, name, attribute)
 
 
 # initiate class. able to affect Shia LeBeouf's health this way'
@@ -101,7 +101,7 @@ elif answer_one == 'd':
 print("You break into a sprint and search for your car but you're all turned around.")
 print("He's almost upon you now and you see his face is covered in blood. My God, there's blood everywhere!")
 print("You give up looking for your car and just focus on outrunning Hollywood superstar {}, who just brandished a knife behind you.".format(killer.name))
-print("As you're running for your life from {}, you start wondering why he's doing out here in the woods, why he seems to be killing for fun, and why there seems to be human flesh stuck between his teeth. Was {} an actual cannibal?".format(killer.name, killer.name))
+print("As you're running for your life from {}, you start wondering why he's doing out here in the woods, why he seems to be killing for fun, \nand why there seems to be human flesh stuck between his teeth. Was {} an actual cannibal?".format(killer.name, killer.name))
 
 sleep(15)
 clear()
@@ -187,6 +187,8 @@ answer_three = None
 while answer_three not in choice_three.keys():
     answer_three = input("What do you do?: ")
 
+clear()
+
 
 # TODO: fix function so it displays text
 # options_three = {
@@ -209,3 +211,122 @@ elif answer_three == 'c':
     print("You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.")
     print("You died. Game over!")
     exit()
+
+print("Carefully, you turn the knob of the door and slowly make your way inside. You sneak up behind him.")
+
+choice_four = {
+    'a': 'tickle him',
+    'b': 'knock him out with your crutch',
+    'c': 'strangle him',
+    'd': 'wait for him to turn around and scare him'
+}
+
+choices(choice_four)
+
+print('----------------------------------------------------------------')
+
+answer_four = None
+
+while answer_four not in choice_four.keys():
+    answer_four = input("What do you do?: ")
+
+clear()
+
+if answer_four == 'a':
+    print("{} starts laughing. Turns out he's really ticklish.".format(killer.name))
+    print("He starts thrashing around with the axe still in his hand.")
+    print("It hits you in the side of the head.")
+    print("You died. Game over!")
+    exit()
+elif answer_four == 'b':
+    print("You swing your crutch at his head, but it turns out it's hard to swing hard with only one leg.")
+    print("{} jumps up and touches his head. There's a little bit a blood but definitely not enough to knock him out.".format(killer.name))
+    print("He axes you. You died. Game Over!")
+    exit()
+elif answer_four == 'd':
+    print("You wait for a few minutes and listen to him humming to himself.")
+    print("At one point he recites an acceptance speech for numerous awards, some of which sound made up.")
+    print("Eventually, he does turn around and you shout right into his face which causes him to scream and jump.")
+    print("You have a good laugh before he axes you. It was totally worth it.")
+    print("You died. Game over!")
+    exit()
+
+print("You strangle superstar {}. You both fall to the floor and you try to wrestle a knife from {}.".format(killer.name, killer.name))
+print("You stab him in his kidney. And he stops moving.")
+print("Safe at last from {}".format(killer.name))
+
+sleep(10)
+clear()
+
+print("You limp into the dark woods, blood oozing from your stump leg.")
+print("You've beaten {}".format(killer.name))
+
+sleep(7)
+clear()
+print("....")
+sleep(2)
+clear()
+print("Wait...")
+sleep(2)
+clear()
+print("He isn't dead! (Shia Surprise!)")
+print("There's a gun to your head and death in his eyes!")
+sleep(5)
+clear()
+
+choice_five = {
+    'a': 'try to confuse him',
+    'b': 'dodge the bullet like Neo from The Matrix',
+    'c': 'body slam him'
+}
+
+choices(choice_five)
+
+print('----------------------------------------------------------------')
+
+answer_five = None
+
+while answer_five not in choice_five.keys():
+    answer_five = input("What do you do?: ")
+
+clear()
+
+if answer_five == 'a':
+    print("You tell him that if he kills you, he'll never learn the truth.")
+    print("What truth? He asks.")
+    print("The truth of Ligma.")
+    print("He shoots you because he already knows where you're going with it.")
+    print("You died. Game over!")
+    exit()
+elif answer_five == 'b':
+    print("Turns out bending backwards with only one leg is really hard.")
+    print("The first shot misses, tho, but before you can celebrate he shots you in the head with a second shot.")
+    print("You died. Game over!")
+    exit()
+
+print("You remember you can do jiu-jitsu.")
+print("You body slam superstar {}".format(killer.name))
+print("Legendary fight with {}".format(killer.name))
+print("Normal Tuesday night for {}".format(killer.name))
+print("You try to swing an axe at {}, but blood is draining fast from your stump leg".format(killer.name))
+
+sleep(15)
+clear()
+
+print("He's dodging every swipe and parries to the left.")
+print("You counter to the right, you catch him in the neck.")
+print("You're chopping off his head now.")
+print("You have just decapitated {}".format(killer.name))
+
+sleep(10)
+clear()
+
+print("His head topples to the floor, expressionless.")
+print("You fall to the ground and catch your breath.")
+print("You're finally safe from {}".format(killer.name))
+
+sleep(10)
+clear()
+
+print(f"YOU HAVE BEATEN {killer.name.capitalize()}. YOU WIN!")
+exit()
