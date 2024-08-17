@@ -18,31 +18,14 @@ def clear():
 class Killer:
     def __init__(self):
         self.name = 'Shia LeBeouf'
-    #     self.health = 100
 
-    # def damage(self, name, dmg):
-    #     attribute = getattr(self, name)
-    #     attribute -= dmg
-    #     setattr(self, name, attribute)
-
-
-# initiate class. able to affect Shia LeBeouf's health this way'
+# initiate class able to display Shia LeBeouf name
 killer = Killer()
 
 # function to display choices
 def choices(choices):
     for num, option in choices.items():
         print("{} : {}".format(num, option))
-
-# TODO: does not properly display text
-# function to print out bad options, hopefully allows reusability and fix bug on 135
-# def choice_made(choice, options):
-#     if choice in options.items():
-#         print_items = options[choice]
-#         for num, item in print_items:
-#             print("{}".format(item))
-#             if num == len(print_items):
-#                 exit()
 
 
 clear()
@@ -189,17 +172,6 @@ while answer_three not in choice_three.keys():
 
 clear()
 
-
-# TODO: fix function so it displays text
-# options_three = {
-#     'a': ["You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.","Especially the part where the as the door opens, you stumble forward and end up on the ground.",f"Needless to say {killer.name} was happy to have his prey come to him.","You died. Game over!"],
-#     'c': ["In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.","You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.","You died. Game over!"]
-# }
-
-
-# choice_made(answer_three, options_three)
-
-
 if answer_three == 'a':
     print("You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.")
     print("Especially the part where the as the door opens, you stumble forward and end up on the ground.")
@@ -330,3 +302,26 @@ clear()
 
 print("YOU HAVE BEATEN {}! YOU WIN!".format(killer.name.upper()))
 exit()
+
+
+
+# TODO: does not properly display text
+# function to print out bad options, hopefully allows reusability and fix bug on 135
+# def choice_made(choice, options):
+#     if choice in options.items():
+#         print_items = options[choice]
+#         for num, item in print_items:
+#             print("{}".format(item))
+#             if num == len(print_items):
+#                 exit()
+
+
+
+# TODO: fix function so it displays text
+# options_three = {
+#     'a': ["You try to bust down the door but with a stump leg it doesn't really look at cool as it does in the movies.","Especially the part where the as the door opens, you stumble forward and end up on the ground.",f"Needless to say {killer.name} was happy to have his prey come to him.","You died. Game over!"],
+#     'c': ["In a panic, you turn and try to quietly make your way down the steps; however, the stick you're using as a crutch slips and you end up falling backwards onto the porch, making a loud sound.","You hear noise inside and footsteps coming towards you. You scramble to get up, but by the time you get on your feet, he's already on the porch behind you.","You died. Game over!"]
+# }
+
+
+# choice_made(answer_three, options_three)
